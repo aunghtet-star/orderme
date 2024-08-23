@@ -17,18 +17,18 @@
                             <hr>
 
                             @if (session('updateSuccess'))
-                            <div class="col-3 offset-6">
-                                <div class="alert alert-success alert-dismissible fade show" role="alert">
-                                    <i class="fa-solid fa-circle-check text-primary me-2"></i> {{session('updateSuccess')}}
-                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <div class="col-3 offset-6">
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <i class="fa-solid fa-circle-check text-primary me-2"></i> {{session('updateSuccess')}}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                    </div>
                                 </div>
-                            </div>
                             @endif
 
                             <form action="{{ route('user#accountChange',Auth::user()->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
-                                    <div class=" col-3 offset-1">
+                                    <div class="col-md-3 col-10 offset-1">
                                         @if (Auth::user()->image == null)
                                             @if (Auth::user()->gender == 'female')
                                                 <img src="{{ asset('images/profileFemale.jpg') }}" class="shadow-sm img-thumbnail" >
@@ -42,21 +42,21 @@
                                         <div class="">
                                             <input type="file" name="image" class="form-control mt-2  @error('image') is-invalid @enderror">
                                             @error('image')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
                                             @enderror
                                         </div>
                                     </div>
 
-                                    <div class=" col-5 ">
+                                    <div class="col-md-5 col-12 ">
                                         <div class="form-group">
                                             <label class="control-label mb-1">Name</label>
                                             <input id="cc-pament" name="name" type="text"  class="form-control @error('name') is-invalid @enderror" value="{{ old('name',Auth::user()->name) }}" aria-required="true" aria-invalid="false" placeholder="Enter Admin Name...">
                                             @error('name')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
                                             @enderror
                                         </div>
 
@@ -64,9 +64,9 @@
                                             <label class="control-label mb-1">Email</label>
                                             <input id="cc-pament" name="email" type="text"  class="form-control @error('email') is-invalid @enderror" value="{{ old('email',Auth::user()->email) }}" aria-required="true" aria-invalid="false" placeholder="Enter Admin Email...">
                                             @error('email')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
                                             @enderror
                                         </div>
 
@@ -74,9 +74,9 @@
                                             <label class="control-label mb-1">Phone</label>
                                             <input id="cc-pament" name="phone" type="number"  class="form-control @error('phone') is-invalid @enderror" value="{{ old('phone',Auth::user()->phone) }}" aria-required="true" aria-invalid="false" placeholder="Enter Admin Phone...">
                                             @error('phone')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
                                             @enderror
                                         </div>
 
@@ -88,9 +88,9 @@
                                                 <option value="female" @if (Auth::user()->gender == 'female') selected @endif>Female</option>
                                             </select>
                                             @error('gender')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
                                             @enderror
                                         </div>
 
@@ -103,13 +103,13 @@
                                             <label class="control-label mb-1">Address</label>
                                             <textarea name="address" class="form-control @error('address') is-invalid @enderror" cols="30" rows="10" placeholder="Enter Admin Adress...">{{ old('address',Auth::user()->address) }}</textarea>
                                             @error('address')
-                                                <div class="invalid-feedback">
-                                                    {{$message}}
-                                                </div>
+                                            <div class="invalid-feedback">
+                                                {{$message}}
+                                            </div>
                                             @enderror
                                         </div>
 
-                                        <button type="submit" class="btn bg-primary text-dark float-end col-3"><i class="fa-solid fa-user-pen text-dark me-2"></i>Update</button>
+                                        <button type="submit" class="btn bg-primary text-dark float-end col-md-3 col-12"><i class="fa-solid fa-user-pen text-dark me-2"></i>Update</button>
                                     </div>
                                 </div>
 
