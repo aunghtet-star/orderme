@@ -37,6 +37,7 @@
                     </div>
                     <h3 class="font-weight-semi-bold mb-4">{{  $product->price }} Kyats</h3>
                     <p class="mb-4">{{ $product->description }}</p>
+                    <p class="mb-4">{{ $product->waiting_time }} mins</p>
                     <div class="d-flex align-items-center mb-4 pt-2">
                         <div class="input-group quantity mr-3" style="width: 130px;">
                             <div class="input-group-btn">
